@@ -61,27 +61,33 @@ export default function SignUp() {
                         onSubmit={handleSubmit}
                     >
                         <div>
-                            <Label value="Your username"></Label>
-                            <TextInput
-                                type="text"
-                                placeholder="Username"
-                                id="username"
-                                onChange={handleChange}
-                            ></TextInput>
-                            <Label value="Your email"></Label>
-                            <TextInput
-                                type="email"
-                                placeholder="name@somemail.com"
-                                id="email"
-                                onChange={handleChange}
-                            ></TextInput>
-                            <Label value="Your password"></Label>
-                            <TextInput
-                                type="password"
-                                placeholder="Password"
-                                id="password"
-                                onChange={handleChange}
-                            ></TextInput>
+                            <div>
+                                <Label value="Your username"></Label>
+                                <TextInput
+                                    type="text"
+                                    placeholder="Username"
+                                    id="username"
+                                    onChange={handleChange}
+                                ></TextInput>
+                            </div>
+                            <div>
+                                <Label value="Your email"></Label>
+                                <TextInput
+                                    type="email"
+                                    placeholder="name@somemail.com"
+                                    id="email"
+                                    onChange={handleChange}
+                                ></TextInput>
+                            </div>
+                            <div>
+                                <Label value="Your password"></Label>
+                                <TextInput
+                                    type="password"
+                                    placeholder="Password"
+                                    id="password"
+                                    onChange={handleChange}
+                                ></TextInput>
+                            </div>
                         </div>
                         <Button
                             gradientDuoTone="purpleToBlue"
