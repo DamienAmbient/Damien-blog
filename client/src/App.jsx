@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -18,10 +19,12 @@ export default function App() {
                 <Route path="/about" element={<About></About>}></Route>
                 <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
                 <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
-                <Route
-                    path="/dashboard"
-                    element={<Dashboard></Dashboard>}
-                ></Route>
+                <Route element={<PrivateRoute></PrivateRoute>}>
+                    <Route
+                        path="/dashboard"
+                        element={<Dashboard></Dashboard>}
+                    ></Route>
+                </Route>
                 <Route path="/projects" element={<Projects></Projects>}></Route>
             </Routes>
             <Footer></Footer>
