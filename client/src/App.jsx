@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/About";
+import CreatePost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -23,6 +25,14 @@ export default function App() {
                     <Route
                         path="/dashboard"
                         element={<Dashboard></Dashboard>}
+                    ></Route>
+                </Route>
+                <Route
+                    element={<OnlyAdminPrivateRoute></OnlyAdminPrivateRoute>}
+                >
+                    <Route
+                        path="/create-post"
+                        element={<CreatePost></CreatePost>}
                     ></Route>
                 </Route>
                 <Route path="/projects" element={<Projects></Projects>}></Route>
