@@ -28,10 +28,10 @@ export default function DashPosts() {
     }, [currentUser._id]);
 
     return (
-        <div className=" table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
+        <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
             {currentUser.isAdmin && userPosts.length > 0 ? (
                 <>
-                    <Table hoverable className=" shadow-md">
+                    <Table hoverable className="shadow-md">
                         <Table.Head>
                             <Table.HeadCell>Date updated</Table.HeadCell>
                             <Table.HeadCell>Post image</Table.HeadCell>
@@ -42,7 +42,7 @@ export default function DashPosts() {
                                 <span>Edit</span>
                             </Table.HeadCell>
                         </Table.Head>
-                        {userPosts.map((post) => {
+                        {userPosts.map((post) => (
                             <Table.Body className=" divide-y">
                                 <Table.Row className=" bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell>
@@ -84,8 +84,8 @@ export default function DashPosts() {
                                         </Link>
                                     </Table.Cell>
                                 </Table.Row>
-                            </Table.Body>;
-                        })}
+                            </Table.Body>
+                        ))}
                     </Table>
                 </>
             ) : (
