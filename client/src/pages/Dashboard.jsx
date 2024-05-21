@@ -15,9 +15,10 @@ export default function Dashboard() {
         }
     }, [location.search]);
     return (
-        <div className=" min-h-screen flex flex-col md:flex-row">
+        <div className="min-h-screen flex flex-col md:flex-row">
             <div className="md:w-56">
-                {/*SIDEBAR*/} <DashSidebar></DashSidebar>
+                {/* Sidebar */}
+                <DashSidebar />
             </div>
             {/*profile*/} {tab === "profile" && <DashProfile></DashProfile>}
             {tab === "posts" && <DashPosts></DashPosts>}
