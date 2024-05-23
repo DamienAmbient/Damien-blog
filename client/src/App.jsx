@@ -8,6 +8,7 @@ import About from "./pages/About";
 import CreatePost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
+import PostPage from "./pages/PostPage";
 import Projects from "./pages/Projects";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
@@ -41,6 +42,10 @@ export default function App() {
                     ></Route>
                 </Route>
                 <Route path="/projects" element={<Projects></Projects>}></Route>
+                <Route
+                    path="/post/:postSlug"
+                    element={<PostPage></PostPage>}
+                ></Route>
             </Routes>
             <Footer></Footer>
         </BrowserRouter>
