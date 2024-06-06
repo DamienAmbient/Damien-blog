@@ -1,4 +1,4 @@
-import { Navbar, TextInput, Button, Dropdown, Avatar } from "flowbite-react";
+import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -24,7 +24,7 @@ export default function Header() {
         }
     }, [location.search]);
 
-    const handleSignOut = async () => {
+    const handleSignout = async () => {
         try {
             const res = await fetch("/api/user/signout", {
                 method: "POST",
@@ -45,15 +45,16 @@ export default function Header() {
         const urlParams = new URLSearchParams(location.search);
         urlParams.set("searchTerm", searchTerm);
         const searchQuery = urlParams.toString();
-        navigate(`/search&${searchQuery}`);
+        navigate(`/search?${searchQuery}`);
     };
+
     return (
         <Navbar className="border-b-2">
             <Link
                 to="/"
-                className=" self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
+                className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
             >
-                <span className=" px-2 py-2 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg text-white">
+                <span className="px-2 py-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg text-white">
                     Damien's
                 </span>
                 Blog
@@ -66,19 +67,19 @@ export default function Header() {
                     className="hidden lg:inline"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                ></TextInput>
+                />
             </form>
-            <Button className=" w-12 h-10 lg:hidden" color="gray" pill>
-                <AiOutlineSearch></AiOutlineSearch>
+            <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+                <AiOutlineSearch />
             </Button>
             <div className="flex gap-2 md:order-2">
                 <Button
-                    className=" w-12 h-10 hidden sm:inline"
+                    className="w-12 h-10 hidden sm:inline"
                     color="gray"
                     pill
                     onClick={() => dispatch(toggleTheme())}
                 >
-                    {theme === "light" ? <FaSun></FaSun> : <FaMoon></FaMoon>}
+                    {theme === "light" ? <FaSun /> : <FaMoon />}
                 </Button>
                 {currentUser ? (
                     <Dropdown
@@ -89,7 +90,7 @@ export default function Header() {
                                 alt="user"
                                 img={currentUser.profilePicture}
                                 rounded
-                            ></Avatar>
+                            />
                         }
                     >
                         <Dropdown.Header>
@@ -103,19 +104,19 @@ export default function Header() {
                         <Link to={"/dashboard?tab=profile"}>
                             <Dropdown.Item>Profile</Dropdown.Item>
                         </Link>
-                        <Dropdown.Divider></Dropdown.Divider>
-                        <Dropdown.Item onClick={handleSignOut}>
+                        <Dropdown.Divider />
+                        <Dropdown.Item onClick={handleSignout}>
                             Sign out
                         </Dropdown.Item>
                     </Dropdown>
                 ) : (
-                    <Link to="sign-in">
+                    <Link to="/sign-in">
                         <Button gradientDuoTone="purpleToBlue" outline>
                             Sign In
                         </Button>
                     </Link>
                 )}
-                <Navbar.Toggle></Navbar.Toggle>
+                <Navbar.Toggle />
             </div>
             <Navbar.Collapse>
                 <Navbar.Link active={path === "/"} as={"div"}>
