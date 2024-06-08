@@ -10,7 +10,7 @@ export const create = async (req, res, next) => {
     }
     const slug = req.body.title
         .split(" ")
-        .join("_")
+        .join("-")
         .toLowerCase()
         .replace(/[^a-zA-Z0-9-]/g, "");
     const newPost = new Post({
@@ -38,12 +38,7 @@ export const getPosts = async (req, res, next) => {
             ...(req.query.postId && { _id: req.query.postId }),
             ...(req.query.searchTerm && {
                 $or: [
-                    {
-                        title: {
-                            $regex: req.query.searchTerm,
-                            $options: "i",
-                        },
-                    },
+                    { title: { $regex: req.query.searchTerm, $options: "i" } },
                     {
                         content: {
                             $regex: req.query.searchTerm,
