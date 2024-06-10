@@ -12,18 +12,18 @@ export default function CallToAction() {
                 </p>
                 <Button gradientDuoTone="purpleToPink">
                     <a
-                        href="https://omnifood-fp7.netlify.app/"
+                        href="https://mern-estate-0uyd.onrender.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Omnifood
+                        MERN Estate project
                     </a>
                 </Button>
             </div>
             <div className="p-7 flex-1">
                 <img
-                    src="https://storage.googleapis.com/develophard-web/users/1698596356410-nextjs-back-button.jpg"
-                    alt=" nextjs picture"
+                    src="https://i0.wp.com/blog.apitier.com/wp-content/uploads/2023/02/MERN_Stack.jpg?fit=560%2C315&ssl=1"
+                    alt=" MERN picture"
                 />
             </div>
         </div>

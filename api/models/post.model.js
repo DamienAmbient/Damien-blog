@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema(
         image: {
             type: String,
             default:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4Ibn0QOPOvm6rOOoRM5Oa3uKlQ7Vad8ADw&usqp=CAU",
+                "https://images.yourstory.com/cs/wordpress/2017/02/52-Blog.jpg?mode=crop&crop=faces&ar=16:9?width=1200&q=75",
         },
         category: {
             type: String,

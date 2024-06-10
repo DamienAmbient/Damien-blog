@@ -44,11 +44,11 @@ export default function FooterCom() {
                                     Omnifood
                                 </FooterLink>
                                 <FooterLink
-                                    href="#"
+                                    href="https://mern-estate-0uyd.onrender.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Some link
+                                    MERN Estate
                                 </FooterLink>
                             </FooterLinkGroup>
                         </div>
@@ -63,11 +63,11 @@ export default function FooterCom() {
                                     Omnifood
                                 </FooterLink>
                                 <FooterLink
-                                    href="#"
+                                    href="https://mern-estate-0uyd.onrender.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Some link
+                                    MERN Estate
                                 </FooterLink>
                             </FooterLinkGroup>
                         </div>
